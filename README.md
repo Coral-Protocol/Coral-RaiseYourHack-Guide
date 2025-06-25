@@ -260,7 +260,7 @@ registry:
 
 <details>
 
-<summary>Option 3: Agents running on executable with orchestrator.:</summary>
+<summary>Option 3: Agents running on executable with orchestrator:</summary>
 
 #### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
@@ -331,6 +331,82 @@ registry:
           - name: "MONZO_ACCOUNT_ID"
             from: "MONZO_ACCOUNT_ID"
 ```
+
+
+</details>
+
+<details>
+
+<summary>Option 4: Agents running without docker or orchestrator:</summary>
+
+Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
+
+#### 1. Git clone the repository and install dependencies
+
+```bash
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
+
+# Install `uv`:
+pip install uv
+```
+
+#### For Coral Interface Agent
+```bash
+# Navigate to the interface agent agent directory
+cd Coral-Interface-Agent
+
+# Install dependencies from `pyproject.toml` using `uv`:
+uv sync
+```
+
+#### For Monzo Agent
+```bash
+# Navigate to the monzo agent directory
+cd Coral-Monzo-Agent
+
+# Install dependencies from `pyproject.toml` using `uv`:
+uv sync
+```
+
+#### 2. Environment Configuration
+
+#### For Coral Interface Agent
+Get the API Key: [OpenAI](https://platform.openai.com/api-keys).
+
+Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
+```bash
+cd Coral-Interface-Agent
+cp -r .env_sample .env
+# Edit .env with your specific configuration
+```
+
+#### For Monzo Agent
+Get the `MONZO_ACCESS_TOKEN` and `MONZO_ACCOUNT_ID`:[Monzo Developer Portal](https://developers.monzo.com/).
+
+Create a `.env` file in the `Coral-Monzo-Agent` directory based on the `.env.example` file:
+```bash
+cd Coral-Monzo-Agent
+cp -r env_example .env
+# Edit .env with your specific configuration
+```
+
+#### 3. Run Agents in Separate Terminals
+
+##### For Coral Interface Agent:
+
+```bash
+cd Coral-Interface-Agent
+uv run 0-langchain-interface.py
+```
+
+##### For Monzo Agent:
+
+```bash
+cd Coral-Monzo-Agent
+uv run langchain-monzo-agent.py
+```
+
 
 
 </details>
