@@ -196,6 +196,64 @@ docker run --network host --env-file .env -it coralprotocol/coral-monzo-agent
 
 <summary>Option 2: Agents running on docker with orchestrator:</summary>
 
+#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+#### 2. Pull the docker image
+
+```bash
+docker pull coralprotocol/coral-interface-agent
+docker pull coralprotocol/coral-monzo-agent
+```
+
+#### 3. Update the config by updating the "application.yml" file
+
+```bash
+applications:
+  - id: "app"
+    name: "Default Application"
+    description: "Default application for testing"
+    privacyKeys:
+      - "default-key"
+      - "public"
+      - "priv"
+
+registry:
+  interface:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "HUMAN_RESPONSE"
+        type: "string"
+        description: "Human response to be used in the interface agent"
+
+    runtime:
+      type: "docker"
+      image: "coralprotocol/coral-interface-agent:latest"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+        - name: "HUMAN_RESPONSE"
+          from: "HUMAN_RESPONSE"
+
+  monzo:
+    options:
+      - name: "MONZO_ACCESS_TOKEN"
+        type: "string"
+        description: "monzo access token"
+      - name: "MONZO_ACCOUNT_ID"
+        type: "string"
+        description: "monzo account id"
+
+    runtime:
+      type: "docker"
+      image: "coralprotocol/coral-monzo-agent:latest"
+      environment:
+        - name: "MONZO_ACCESS_TOKEN"
+          from: "MONZO_ACCESS_TOKEN"
+        - name: "MONZO_ACCOUNT_ID"
+          from: "MONZO_ACCOUNT_ID"
+```
 
 
 </details>
