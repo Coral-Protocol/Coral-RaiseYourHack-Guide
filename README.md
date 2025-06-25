@@ -122,13 +122,15 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 ## Coral Example Usage
 
+Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral.
+
 ### Qualcomm Track: Personal Finance Advisor
 
-This project is a comprehensive personal finance advisor system that combines the [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent) to provide secure, intelligent, and privacy-preserving financial management through natural language interaction. The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice. All agents in this project are part of the [Awesome Agents for Multi-Agent Systems](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) collection.
+This project is a comprehensive personal finance advisor system that combines the [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent) to provide secure, intelligent, and privacy-preserving financial management through natural language interaction. The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
 
 ### Prosus Track: Restaurant Agentic System Webapp
 
-This project is a comprehensive restaurant voice agent system that combines [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent) to connect via coral protocol to provide an intelligent conversational experience for restaurant interactions. The agents used in this project are part of the [Awesome Agents for Multi-Agent Systems](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) collection and is a working sample for [Prosus Track for Hackathon](https://lablab.ai/event/raise-your-hack).
+This project is a comprehensive restaurant voice agent system that combines [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent) to connect via coral protocol to provide an intelligent conversational experience for restaurant interactions.
 
 ### Vultr Track: How to setup Coral on Vultr
 
