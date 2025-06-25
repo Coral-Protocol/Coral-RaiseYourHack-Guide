@@ -131,9 +131,11 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 - A comprehensive personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
 - The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent)
-- How to run:
+
 
 <details>
+
+### How to run:
 
 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
@@ -214,9 +216,10 @@ registry:
 
 - A comprehensive restaurant voice agent system connect via coral protocol to provide an intelligent conversational experience for restaurant interactions.
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
-- How to run:
 
 <details>
+
+### How to run:
 
 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
