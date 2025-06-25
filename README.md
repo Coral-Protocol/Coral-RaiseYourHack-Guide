@@ -122,9 +122,7 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 ## Coral Example Usage
 
-Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral. Set-up as per the given instructions and choose agents as per requirement.
-
-(NOTE: The examples here are just to demonstrate how to use Coral, for the hackathon you have to create you own use case by either selecting from the list of agents from our [aawesome agent list](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) or create your own agents compatible on Coral.)
+Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral Protocol, set-up as per the given instructions and choose/ create agents as per your requirement.
 
 ### Qualcomm Track: Personal Finance Advisor
 
@@ -312,5 +310,5 @@ ssh root@95.179.233.169
 
 4. Clone your system/ agent repository on the server and run
 
-## Example 
+(NOTE: The examples above are just to demonstrate how to use Coral, for the hackathon you have to create you own use case by either selecting from the list of agents from our [awesome agent list](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) or create your own agents compatible on Coral.)
 
