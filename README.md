@@ -15,9 +15,9 @@ The [Coral Protocol](https://www.coralprotocol.org/) is an initiative to create 
 
 We released the Coral Server as an open-source MCP server to serve as the backbone for this vision. The server acts as a messaging hub where AI agents can register, communicate via threads, and coordinate tasks by mentioning each other. The protocol aims to foster a community-driven ecosystem, encouraging developers to experiment, contribute, and build collaborative AI systems.
 
-## About Vultr Track [Link](https://lablab.ai/event/raise-your-hack)
+## About Vultr Track
 
-🧠 Agentic Workflows for the Future of Work
+🧠 Agentic Workflows for the Future of Work [(Link)](https://lablab.ai/event/raise-your-hack)
 
 Build a Web-Based Enterprise Agent Deployed on Vultr
 
