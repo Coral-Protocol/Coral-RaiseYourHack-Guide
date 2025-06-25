@@ -258,6 +258,83 @@ registry:
 
 </details>
 
+<details>
+
+<summary>Option 3: Agents running on executable with orchestrator.:</summary>
+
+#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+#### 2. Git clone the repository
+
+```bash
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
+cd Qualcomn-Track-use-case-example----Personal-finance-advisor
+```
+#### 3. Update the config by updating the "application.yml" file
+
+```bash
+applications:
+  - id: "app"
+    name: "Default Application"
+    description: "Default application for testing"
+    privacyKeys:
+      - "default-key"
+      - "public"
+      - "priv"
+
+# Registry of agents we can orchestrate
+registry:
+  interface-local:
+      options:
+        - name: "OPENAI_API_KEY"
+          type: "string"
+          description: "OpenAI API Key"
+        - name: "HUMAN_RESPONSE"
+          type: "string"
+          description: "Human response to be used in the interface agent"
+  
+      runtime:
+        type: "executable"
+        command:
+          [
+            "bash",
+            "-c",
+            "cd ../Coral-Interface-Agent && uv sync && uv run 0-langchain-interface.py",
+          ]
+        environment:
+          - name: "API_KEY"
+            from: "OPENAI_API_KEY"
+          - name: "HUMAN_RESPONSE"
+            from: "HUMAN_RESPONSE"
+
+  Monzo:
+      options:
+        - name: "MONZO_ACCESS_TOKEN"
+          type: "string"
+          description: "monzo access token"
+        - name: "MONZO_ACCOUNT_ID"
+          type: "string"
+          description: "monzo account id"
+  
+      runtime:
+        type: "executable"
+        command:
+          [
+            "bash",
+            "-c",
+            "cd ../Coral-Monzo-Agent && uv sync && uv run langchain-monzo-agent.py",
+          ]
+        environment:
+          - name: "MONZO_ACCESS_TOKEN"
+            from: "MONZO_ACCESS_TOKEN"
+          - name: "MONZO_ACCOUNT_ID"
+            from: "MONZO_ACCOUNT_ID"
+```
+
+
+</details>
+
 </details>
 
 ### Prosus Track: Restaurant Agentic System Webapp
