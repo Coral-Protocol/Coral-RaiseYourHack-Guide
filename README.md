@@ -120,7 +120,7 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 </details>
 
-## Coral Example Usage
+## Coral Example Usage 🧠
 
 Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral Protocol, set-up as per the given instructions and choose/ create agents as per your requirement.
 
@@ -340,7 +340,15 @@ npm run dev
 ssh root@95.179.233.169
 ```
 
-- Clone your system/ agent repository on the server and run
+<details>
+
+### How to run:
+
+1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+2. Build your multi-agent system and clone your system/ agent repository on the server and run.
+
+</details>
 
 (NOTE: The examples above are just to demonstrate how to use Coral. For the hackathon you have to create you own use case by either selecting from the list of agents from our [awesome agent list](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) or create your own agents compatible on Coral.)
 
