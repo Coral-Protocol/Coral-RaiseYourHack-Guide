@@ -466,10 +466,15 @@ uv run langchain-monzo-agent.py
 
 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
-2. Pull the docker image
+2. Pull the docker images
 
+For Web interface Agent:
 ```bash
-docker pull coralprotocol/coral-repounderstanding
+docker pull coralprotocol/coral-interface-agent-for-webapp
+```
+For Restarurant Agent:
+```bash
+docker pull coralprotocol/coral-restaurant-voice-agent
 ```
 
 3. Update the config by updating the "application.yml" file
@@ -485,45 +490,11 @@ applications:
       - "priv"
 
 registry:
-  repounderstanding:
-    options:
-      - name: "OPENAI_API_KEY"
-        type: "string"
-        description: "OpenAI API Key"
-      - name: "GITHUB_ACCESS_TOKEN"
-        type: "string"
-        description: "GitHub Access Token"
-
-    runtime:
-      type: "docker"
-      environment:
-        - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-        - name: "GITHUB_ACCESS_TOKEN"
-          from: "GITHUB_ACCESS_TOKEN"
-      image: "coralprotocol/coral-repounderstanding:latest"
-
-  deepresearch:
-    options:
-      - name: "OPENAI_API_KEY"
-        type: "string"
-        description: "OpenAI API Key"
-      - name: "LINKUP_API_KEY"
-        type: "string"
-        description: "LinkUp API Key. Get from https://linkup.so/"
-
-    runtime:
-      type: "docker"
-      environment:
-        - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-      image: "coralprotocol/coral-opendeepresearch:latest"
-
   interface:
     options:
-      - name: "OPENAI_API_KEY"
+      - name: "GROQ_API_KEY"
         type: "string"
-        description: "OpenAI API Key"
+        description: "Groq API Key"
       - name: "HUMAN_RESPONSE"
         type: "string"
         description: "Human response to be used in the interface agent"
@@ -533,9 +504,48 @@ registry:
       image: "coralprotocol/coral-interface-agent:latest"
       environment:
         - name: "API_KEY"
-          from: "OPENAI_API_KEY"
+          from: "GROQ_API_KEY"
         - name: "HUMAN_RESPONSE"
           from: "HUMAN_RESPONSE"
+
+  restaurant:
+    options:
+      - name: "LIVEKIT_URL"
+        type: "string"
+        description: "LiveKit Server URL"
+      - name: "LIVEKIT_API_KEY"
+        type: "string"
+        description: "LiveKit API Key"
+      - name: "LIVEKIT_API_SECRET"
+        type: "string"
+        description: "LiveKit API Secret"
+      - name: "GROQ_API_KEY"
+        type: "string"
+        description: "Groq API Key"
+      - name: "DEEPGRAM_API_KEY"
+        type: "string"
+        description: "Deepgram API Key"
+      - name: "CARTESIA_API_KEY"
+        type: "string"
+        description: "Cartesia API Key"
+
+    runtime:
+      type: "docker"
+      image: "coralprotocol/coral-restaurant-agent:latest"
+      environment:
+        - name: "LIVEKIT_URL"
+          from: "LIVEKIT_URL"
+        - name: "LIVEKIT_API_KEY"
+          from: "LIVEKIT_API_KEY"
+        - name: "LIVEKIT_API_SECRET"
+          from: "LIVEKIT_API_SECRET"
+        - name: "API_KEY"
+          from: "GROQ_API_KEY"
+        - name: "DEEPGRAM_API_KEY"
+          from: "DEEPGRAM_API_KEY"
+        - name: "CARTESIA_API_KEY"
+          from: "CARTESIA_API_KEY"
+
 ```
 
 ### Connect to UI
