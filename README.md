@@ -120,7 +120,7 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 </details>
 
-## Coral Example Usage 🧠
+## Coral Example Usage 🎮
 
 Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral Protocol, set-up as per the given instructions and choose/ create agents as per your requirement.
 
