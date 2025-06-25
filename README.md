@@ -13,7 +13,7 @@ The [Coral Protocol](https://www.coralprotocol.org/) is an initiative to create 
 
 - Scalability and Openness: Designing an extensible, open-source solution that can support a wide range of AI applications, from customer support to project management.
 
-We released the Coral Server as an open-source MCP server to serve as the backbone for this vision. The server acts as a messaging hub where AI agents can register, communicate via threads, and coordinate tasks by mentioning each other. The protocol aims to foster a community-driven ecosystem, encouraging developers to experiment, contribute, and build collaborative AI systems.
+We released the [Coral Server](https://github.com/Coral-Protocol/coral-server) as an open-source MCP server to serve as the backbone for this vision. The server acts as a messaging hub where AI agents can register, communicate via threads, and coordinate tasks by mentioning each other. The protocol aims to foster a community-driven ecosystem, encouraging developers to experiment, contribute, and build collaborative AI systems.
 
 ## About Vultr Track
 
@@ -59,4 +59,6 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 ```bash
 ssh root@95.179.233.169
 ```
+
+4. Clone your system/ agent repository on the server and run.
 
