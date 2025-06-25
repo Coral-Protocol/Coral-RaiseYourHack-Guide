@@ -124,9 +124,91 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral.
 
+Set-up as per the given instructions and choose below agents.
+
 ### Qualcomm Track: Personal Finance Advisor
 
-This project is a comprehensive personal finance advisor system that combines the [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent) to provide secure, intelligent, and privacy-preserving financial management through natural language interaction. The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
+- A comprehensive personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
+- The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
+- Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent)
+- How to run:
+
+<deatils>
+
+1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+2. Pull the docker image
+
+```bash
+docker pull coralprotocol/coral-repounderstanding
+```
+
+3. Update the config by updating the "application.yml" file
+
+```bash
+applications:
+  - id: "app"
+    name: "Default Application"
+    description: "Default application for testing"
+    privacyKeys:
+      - "default-key"
+      - "public"
+      - "priv"
+
+registry:
+  repounderstanding:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "GITHUB_ACCESS_TOKEN"
+        type: "string"
+        description: "GitHub Access Token"
+
+    runtime:
+      type: "docker"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+        - name: "GITHUB_ACCESS_TOKEN"
+          from: "GITHUB_ACCESS_TOKEN"
+      image: "coralprotocol/coral-repounderstanding:latest"
+
+  deepresearch:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "LINKUP_API_KEY"
+        type: "string"
+        description: "LinkUp API Key. Get from https://linkup.so/"
+
+    runtime:
+      type: "docker"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+      image: "coralprotocol/coral-opendeepresearch:latest"
+
+  interface:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "HUMAN_RESPONSE"
+        type: "string"
+        description: "Human response to be used in the interface agent"
+
+    runtime:
+      type: "docker"
+      image: "coralprotocol/coral-interface-agent:latest"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+        - name: "HUMAN_RESPONSE"
+          from: "HUMAN_RESPONSE"
+```
+</details>
 
 ### Prosus Track: Restaurant Agentic System Webapp
 
