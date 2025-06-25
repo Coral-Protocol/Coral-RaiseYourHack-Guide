@@ -1,4 +1,4 @@
-# Coral Raise Your Hack Track
+# Coral Raise Your Hack Guide
 
 ## About Raise Your Hack 💻
 This is your chance to push boundaries, solve real-world challenges, and create impact at the official hackathon of the [RAISE Summit 2025](https://www.raisesummit.com/) at one of Paris's most iconic venues: Le Carrousel du Louvre. RAISE Summit 2025 is a premier event convening the brightest minds across industries to accelerate innovation and drive the future of entrepreneurship, AI, and technology.
