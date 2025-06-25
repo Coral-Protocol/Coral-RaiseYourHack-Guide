@@ -133,6 +133,47 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 <details>
 
+### How to set up local moel:
+
+<details>
+
+<summary>Click to expand Ollama instructions</summary>
+
+Monzo Agent uses Ollama to run local LLM. Please make sure you have Ollama installed and the desired model downloaded before running the agent.
+
+**1. Install Ollama**
+
+- **Linux/macOS:**
+  Follow the official instructions: [https://ollama.com/download](https://ollama.com/download)
+  Or run:
+  ```bash
+  curl -fsSL https://ollama.com/install.sh | sh
+  ```
+- **Windows:**
+  Download the installer from [Ollama's website](https://ollama.com/download).
+
+**2. Download Local model**
+
+```bash
+ollama pull qwen3:latest
+```
+
+**3. Start Ollama Service**
+
+Ollama usually starts automatically. If not, start it manually:
+```bash
+ollama serve
+```
+
+**4. Verify the model is running**
+
+```bash
+ollama list
+```
+Make sure no errors occur and Ollama is running at `http://localhost:11434`.
+
+</details>
+
 ### How to run:
 
 <details>
@@ -351,7 +392,7 @@ git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----P
 pip install uv
 ```
 
-#### For Coral Interface Agent
+##### For Coral Interface Agent
 ```bash
 # Navigate to the interface agent agent directory
 cd Coral-Interface-Agent
@@ -360,7 +401,7 @@ cd Coral-Interface-Agent
 uv sync
 ```
 
-#### For Monzo Agent
+##### For Monzo Agent
 ```bash
 # Navigate to the monzo agent directory
 cd Coral-Monzo-Agent
@@ -371,7 +412,7 @@ uv sync
 
 #### 2. Environment Configuration
 
-#### For Coral Interface Agent
+##### For Coral Interface Agent
 Get the API Key: [OpenAI](https://platform.openai.com/api-keys).
 
 Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
@@ -381,7 +422,7 @@ cp -r .env_sample .env
 # Edit .env with your specific configuration
 ```
 
-#### For Monzo Agent
+##### For Monzo Agent
 Get the `MONZO_ACCESS_TOKEN` and `MONZO_ACCOUNT_ID`:[Monzo Developer Portal](https://developers.monzo.com/).
 
 Create a `.env` file in the `Coral-Monzo-Agent` directory based on the `.env.example` file:
@@ -393,14 +434,14 @@ cp -r env_example .env
 
 #### 3. Run Agents in Separate Terminals
 
-##### For Coral Interface Agent:
+###### For Coral Interface Agent:
 
 ```bash
 cd Coral-Interface-Agent
 uv run 0-langchain-interface.py
 ```
 
-##### For Monzo Agent:
+###### For Monzo Agent:
 
 ```bash
 cd Coral-Monzo-Agent
