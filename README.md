@@ -1,9 +1,9 @@
 # Coral Raise Your Hack Track: Vultr Example
 
-## About Raise Your Hack
+## About Raise Your Hack 💻
 This is your chance to push boundaries, solve real-world challenges, and create impact at the official hackathon of the [RAISE Summit 2025](https://www.raisesummit.com/) at one of Paris's most iconic venues: Le Carrousel du Louvre. RAISE Summit 2025 is a premier event convening the brightest minds across industries to accelerate innovation and drive the future of entrepreneurship, AI, and technology.
 
-## About Coral Protocol
+## About Coral Protocol 🪸
 
 The [Coral Protocol](https://www.coralprotocol.org/) is an initiative to create an open, standardized infrastructure for AI agent coordination. It builds on the MCP framework to enable multiple AI agents to work together collaboratively, addressing the limitation of isolated AI systems that lack mechanisms for interconnected workflows. The Coral Protocol focuses on:
 
@@ -44,4 +44,6 @@ In this track, you'll design and develop a web-based AI agent purpose-built to s
 • Show how your app solves a real problem in an enterprise context.
 
 Each team leader of the Vultr Track will receive a coupon code to claim $250 in free credits on Vultr by signing up as a regular customer.
+
+## How to host Coral on Vultr
 
