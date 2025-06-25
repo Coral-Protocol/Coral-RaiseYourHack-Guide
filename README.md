@@ -457,7 +457,7 @@ uv run langchain-monzo-agent.py
 ### Prosus Track: Restaurant Agentic System Webapp
 
 - A comprehensive restaurant voice agent system to provide an intelligent conversational experience for restaurant interactions.
-- Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
+- Agents: [Interface Agent](https://github.com/Coral-Protocol/Interface-Agent-for-Webapp) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
 - [Demo Video](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)
 
 <details>
