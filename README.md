@@ -53,7 +53,8 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 1. Host an instance on Vultr by signing up and following the steps in the [product documentation](https://docs.vultr.com/products).
 
-2. Choose the instance as per your system requirements.
+2. Choose the instance as per your system requirements
+![Vultr Instance](images/vultr-instance.png)
 
 3. 
 
