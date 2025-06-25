@@ -328,19 +328,19 @@ npm run dev
 
 ### Vultr Track: How to setup Coral on Vultr
 
-1. Sign up on Vultr and know more by looking into the [product documentation](https://docs.vultr.com/products)
+- Sign up on Vultr and know more by looking into the [product documentation](https://docs.vultr.com/products)
 
-2. Choose and host an instance as per your system requirements
+- Choose and host an instance as per your system requirements
 
 ![Vultr Instance](images/vultr-instance.png)
 
-3. SSH into the instance (check IP) and enter the password of your instance
+- SSH into the instance (check IP) and enter the password of your instance
 
 ```bash
 ssh root@95.179.233.169
 ```
 
-4. Clone your system/ agent repository on the server and run
+- Clone your system/ agent repository on the server and run
 
 (NOTE: The examples above are just to demonstrate how to use Coral, for the hackathon you have to create you own use case by either selecting from the list of agents from our [awesome agent list](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) or create your own agents compatible on Coral.)
 
