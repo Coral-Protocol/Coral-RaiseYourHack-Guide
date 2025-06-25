@@ -51,9 +51,10 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 ## How to host Coral on Vultr
 
-1. Host an instance on Vultr by signing up and following the steps in the [product documentation](https://docs.vultr.com/products).
+1. Sign up on Vultr and know more by looking into the [product documentation](https://docs.vultr.com/products)
 
-2. Choose the instance as per your system requirements
+2. Choose and host an instance as per your system requirements.
+
 ![Vultr Instance](images/vultr-instance.png)
 
 3. 
