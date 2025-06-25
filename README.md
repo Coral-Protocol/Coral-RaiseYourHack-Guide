@@ -122,9 +122,9 @@ Each team leader of the Vultr Track will receive a coupon code to claim $250 in 
 
 ## Coral Example Usage
 
-Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral.
+Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp) to get started on building on Coral. Set-up as per the given instructions and choose agents as per requirement.
 
-Set-up as per the given instructions and choose below agents.
+(NOTE: The examples here are just to demonstrate how to use Coral, for the hackathon you have to create you own use case by either selecting from the list of agents from our [aawesome agent list](https://github.com/Coral-Protocol/awesome-agents-for-multi-agent-systems) or create your own agents compatible on Coral.)
 
 ### Qualcomm Track: Personal Finance Advisor
 
@@ -212,7 +212,86 @@ registry:
 
 ### Prosus Track: Restaurant Agentic System Webapp
 
-This project is a comprehensive restaurant voice agent system that combines [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent) to connect via coral protocol to provide an intelligent conversational experience for restaurant interactions.
+- A comprehensive restaurant voice agent system connect via coral protocol to provide an intelligent conversational experience for restaurant interactions.
+- Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
+- How to run:
+
+<details>
+
+1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+2. Pull the docker image
+
+```bash
+docker pull coralprotocol/coral-repounderstanding
+```
+
+3. Update the config by updating the "application.yml" file
+
+```bash
+applications:
+  - id: "app"
+    name: "Default Application"
+    description: "Default application for testing"
+    privacyKeys:
+      - "default-key"
+      - "public"
+      - "priv"
+
+registry:
+  repounderstanding:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "GITHUB_ACCESS_TOKEN"
+        type: "string"
+        description: "GitHub Access Token"
+
+    runtime:
+      type: "docker"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+        - name: "GITHUB_ACCESS_TOKEN"
+          from: "GITHUB_ACCESS_TOKEN"
+      image: "coralprotocol/coral-repounderstanding:latest"
+
+  deepresearch:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "LINKUP_API_KEY"
+        type: "string"
+        description: "LinkUp API Key. Get from https://linkup.so/"
+
+    runtime:
+      type: "docker"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+      image: "coralprotocol/coral-opendeepresearch:latest"
+
+  interface:
+    options:
+      - name: "OPENAI_API_KEY"
+        type: "string"
+        description: "OpenAI API Key"
+      - name: "HUMAN_RESPONSE"
+        type: "string"
+        description: "Human response to be used in the interface agent"
+
+    runtime:
+      type: "docker"
+      image: "coralprotocol/coral-interface-agent:latest"
+      environment:
+        - name: "API_KEY"
+          from: "OPENAI_API_KEY"
+        - name: "HUMAN_RESPONSE"
+          from: "HUMAN_RESPONSE"
+```
+</details>
 
 ### Vultr Track: How to setup Coral on Vultr
 
