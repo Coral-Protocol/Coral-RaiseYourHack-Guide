@@ -135,79 +135,71 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 ### How to run:
 
-1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+<details>
 
-2. Pull the docker image
+<summary>Option 1: Agents running on docker without orchestrator:</summary>
 
-```bash
-docker pull coralprotocol/coral-repounderstanding
-```
+Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
 
-3. Update the config by updating the "application.yml" file
+#### 1. Git clone and pull docker image
 
 ```bash
-applications:
-  - id: "app"
-    name: "Default Application"
-    description: "Default application for testing"
-    privacyKeys:
-      - "default-key"
-      - "public"
-      - "priv"
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
 
-registry:
-  repounderstanding:
-    options:
-      - name: "OPENAI_API_KEY"
-        type: "string"
-        description: "OpenAI API Key"
-      - name: "GITHUB_ACCESS_TOKEN"
-        type: "string"
-        description: "GitHub Access Token"
-
-    runtime:
-      type: "docker"
-      environment:
-        - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-        - name: "GITHUB_ACCESS_TOKEN"
-          from: "GITHUB_ACCESS_TOKEN"
-      image: "coralprotocol/coral-repounderstanding:latest"
-
-  deepresearch:
-    options:
-      - name: "OPENAI_API_KEY"
-        type: "string"
-        description: "OpenAI API Key"
-      - name: "LINKUP_API_KEY"
-        type: "string"
-        description: "LinkUp API Key. Get from https://linkup.so/"
-
-    runtime:
-      type: "docker"
-      environment:
-        - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-      image: "coralprotocol/coral-opendeepresearch:latest"
-
-  interface:
-    options:
-      - name: "OPENAI_API_KEY"
-        type: "string"
-        description: "OpenAI API Key"
-      - name: "HUMAN_RESPONSE"
-        type: "string"
-        description: "Human response to be used in the interface agent"
-
-    runtime:
-      type: "docker"
-      image: "coralprotocol/coral-interface-agent:latest"
-      environment:
-        - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-        - name: "HUMAN_RESPONSE"
-          from: "HUMAN_RESPONSE"
+# Pull docker images
+docker pull coralprotocol/coral-interface-agent
+docker pull coralprotocol/coral-monzo-agent
 ```
+
+#### 2. Environment Configuration
+
+##### For Coral Interface Agent:
+Get the API Key: [OpenAI](https://platform.openai.com/api-keys).
+
+Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
+```bash
+cd Coral-Interface-Agent
+cp -r .env_sample .env
+# Edit .env with your specific configuration
+```
+
+##### For Monzo Agent:
+Get the `MONZO_ACCESS_TOKEN` and `MONZO_ACCOUNT_ID`:[Monzo Developer Portal](https://developers.monzo.com/).
+
+Create a `.env` file in the `Coral-Monzo-Agent` directory based on the `.env.example` file:
+```bash
+cd Coral-Monzo-Agent
+cp -r env_example .env
+# Edit .env with your specific configuration
+```
+
+#### 3. Run Agents in Separate Terminals
+
+##### For Coral Interface Agent:
+
+```bash
+cd Coral-Interface-Agent
+docker run --network host --env-file .env -it coralprotocol/coral-interface-agent
+```
+
+##### For Monzo Agent:
+
+```bash
+cd Coral-Monzo-Agent
+docker run --network host --env-file .env -it coralprotocol/coral-monzo-agent
+```
+
+</details>
+
+<details>
+
+<summary>Option 2: Agents running on docker with orchestrator:</summary>
+
+
+
+</details>
+
 </details>
 
 ### Prosus Track: Restaurant Agentic System Webapp
