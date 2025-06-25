@@ -19,8 +19,6 @@ We released the Coral Server as an open-source MCP server to serve as the backbo
 
 🧠 Agentic Workflows for the Future of Work [(Link)](https://lablab.ai/event/raise-your-hack)
 
-<details>
-
 Build a Web-Based Enterprise Agent Deployed on Vultr
 
 In this track, you'll design and develop a web-based AI agent purpose-built to support enterprise teams—from marketing to sales, operations, and beyond. Your mission: create a smart, agentic tool that simplifies, accelerates, or transforms workflows for today’s (and tomorrow’s) knowledge workers. The core app should be deployed on Vultr infrastructure and optimized for real-world business use cases.
@@ -47,15 +45,18 @@ In this track, you'll design and develop a web-based AI agent purpose-built to s
 
 Each team leader of the Vultr Track will receive a coupon code to claim $250 in free credits on Vultr by signing up as a regular customer.
 
-</details>
 
 ## How to host Coral on Vultr
 
 1. Sign up on Vultr and know more by looking into the [product documentation](https://docs.vultr.com/products)
 
-2. Choose and host an instance as per your system requirements.
+2. Choose and host an instance as per your system requirements
 
 ![Vultr Instance](images/vultr-instance.png)
 
-3. 
+3. SSH into the instance (check IP) and enter the password of your instance
+
+```bash
+ssh root@95.179.233.169
+```
 
