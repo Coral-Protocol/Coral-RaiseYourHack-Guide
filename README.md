@@ -450,7 +450,9 @@ uv run langchain-monzo-agent.py
 
 </details>
 
-### 3. Sample Input/ Output
+### 3. How to use:
+
+<details>
 
 #### 1. Input
 
@@ -463,6 +465,7 @@ uv run langchain-monzo-agent.py
 ```bash
 
 ```
+</details>
 
 </details>
 
@@ -847,7 +850,9 @@ npm run dev
 
 - Interact: You can now chat with the agentic system for restaurant-related queries and interactions
 
-### 3. Sample Input/ Output
+### 3. How to use:
+
+<details>
 
 #### 1. Input
 
@@ -860,6 +865,7 @@ npm run dev
 ```bash
 
 ```
+</details>
 
 </details>
 
