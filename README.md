@@ -133,7 +133,7 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 <details>
 
-### 1. How to set up local moel:
+### 1. How to set up local model:
 
 <details>
 
@@ -453,6 +453,8 @@ uv run langchain-monzo-agent.py
 ### 3. How to use:
 
 <details>
+
+<summary>Click to expand sample input/output</summary>
 
 #### 1. Input
 
@@ -840,7 +842,11 @@ npm run dev
 
 </details>
 
-### 2. Connect to UI 
+### 2. How to Connect to UI:
+
+<summary>Click to expand UI app running instructions</summary>
+
+<details>
 
 - Access the Application: Open your browser and navigate to the UI application (typically http://localhost:3000)
 
@@ -850,7 +856,11 @@ npm run dev
 
 - Interact: You can now chat with the agentic system for restaurant-related queries and interactions
 
+</details>
+
 ### 3. How to use:
+
+<summary>Click to expand sample input/output</summary>
 
 <details>
 
