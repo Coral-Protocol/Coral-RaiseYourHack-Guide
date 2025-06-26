@@ -871,13 +871,21 @@ npm run dev
 #### 1. Input
 
 ```bash
+Greet the restaurant agent by saying "Hi!".  
+You can message the interface agent like this:  
+Ask the restaurant agent to tell you the menu for the restaurant.  
 
+You can also talk directly to the restaurant agent using voice, but only when it is not using the "wait for mentions" tool.
 ```
 
 #### 2. Output
 
 ```bash
+The restaurant agent will greet you and listen to your queries.  
 
+When using the interface agent, it will communicate with the restaurant agent through Coral tools. The restaurant agent will reply to the interface agent, but it will not speak based on the interface agent's request.  
+
+For speech-based interaction, you need to talk to the restaurant agent directly.
 ```
 </details>
 
