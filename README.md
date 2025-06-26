@@ -457,6 +457,8 @@ uv run langchain-monzo-agent.py
 ### Prosus Track: Restaurant Agentic System Webapp
 
 - A comprehensive restaurant voice agent system to provide an intelligent conversational experience for restaurant interactions.
+- A voice-enabled system that handles customer reservations, takeaway orders, and payments without human staff intervention
+- Uses Interface Agent to coordinate user instructions and Restaurant Voice Agent to manage real-time voice conversations across specialized functions
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Interface-Agent-for-Webapp) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
 - [Demo Video](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)
 
@@ -464,20 +466,85 @@ uv run langchain-monzo-agent.py
 
 ### How to run:
 
-1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+<details>
 
-2. Pull the docker images
+<summary>Option 1: Agents running on docker without orchestrator:</summary>
 
-For Web interface Agent:
+Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
+
+#### 1. Git clone and pull docker image
+
 ```bash
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
+
+# Pull docker images
 docker pull coralprotocol/coral-interface-agent-for-webapp
-```
-For Restarurant Agent:
-```bash
 docker pull coralprotocol/coral-restaurant-voice-agent
 ```
 
-3. Update the config by updating the "application.yml" file
+#### 2. Environment Configuration
+
+##### For Coral Interface Agent:
+Get the API Key: [Groq](https://console.groq.com/keys).
+
+Create a `.env` file in the `Interface-Agent-for-Webapp` directory based on the `.env_sample` file:
+```bash
+cd Interface-Agent-for-Webapp
+cp -r .env_sample .env
+# Edit .env with your specific configuration
+```
+
+##### For Restaurant Agent:
+Get these api keys
+GROQ_API_KEY=[Groq](https://console.groq.com/keys).
+Note:
+If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out their documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
+
+LIVEKIT_API_KEY=your_livekit_api_key_here 
+LIVEKIT_API_SECRET=your_livekit_api_secret_here  
+LIVEKIT_URL=your_livekit_url_here  
+
+Create a `.env` file in the `Restaurant-Voice-Agent` directory based on the `.env.example` file:
+```bash
+cd Restaurant-Voice-Agent
+cp -r env.example .env
+# Edit .env with your specific configuration
+```
+
+#### 3. Run Agents in Separate Terminals
+
+##### For Coral Interface Agent:
+
+```bash
+cd Interface-Agent-for-Webapp
+docker run --env-file .env -it coralprotocol/coral-interface-agent-for-webapp
+```
+
+##### For Restaurant Agent:
+Note: When running with docker you have to interact with the livekit agent using the UI with the same Livekit api key, secret key and url as the voice input will be from your UI.
+
+```bash
+cd Restaurant-Voice-Agent
+docker run --env-file .env -it coralprotocol/coral-restaurant-voice-agent
+```
+
+</details>
+
+<details>
+
+<summary>Option 2: Agents running on docker with orchestrator:</summary>
+
+#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+#### 2. Pull the docker image
+
+```bash
+docker pull coralprotocol/coral-interface-agent-for-webapp
+docker pull coralprotocol/coral-restaurant-voice-agent
+```
+
+#### 3. Update the config by updating the "application.yml" file in the Coral Server:
 
 ```bash
 applications:
@@ -545,38 +612,215 @@ registry:
           from: "DEEPGRAM_API_KEY"
         - name: "CARTESIA_API_KEY"
           from: "CARTESIA_API_KEY"
+```
+
+
+</details>
+
+<details>
+
+<summary>Option 3: Agents running on executable with orchestrator:</summary>
+
+#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+#### 2. Git clone the repository
+
+```bash
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
+cd Restaurant-Agentic-Webapp
+```
+#### 3. Update the config by updating the "application.yml" file
+
+```bash
+applications:
+  - id: "app"
+    name: "Default Application"
+    description: "Default application for testing"
+    privacyKeys:
+      - "default-key"
+      - "public"
+      - "priv"
+
+registry:
+  interface-local:
+    options:
+      - name: "GROQ_API_KEY"
+        type: "string"
+        description: "Groq API Key"
+      - name: "HUMAN_RESPONSE"
+        type: "string"
+        description: "Human response to be used in the interface agent"
+
+    runtime:
+      type: "executable"
+      command:
+        [
+          "bash",
+          "-c",
+          "cd ../Coral-Interface-Agent && uv sync && uv run 0-langchain-interface.py",
+        ]
+      environment:
+        - name: "API_KEY"
+          from: "GROQ_API_KEY"
+        - name: "HUMAN_RESPONSE"
+          from: "HUMAN_RESPONSE"
+
+  restaurant:
+    options:
+      - name: "LIVEKIT_URL"
+        type: "string"
+        description: "LiveKit Server URL"
+      - name: "LIVEKIT_API_KEY"
+        type: "string"
+        description: "LiveKit API Key"
+      - name: "LIVEKIT_API_SECRET"
+        type: "string"
+        description: "LiveKit API Secret"
+      - name: "GROQ_API_KEY"
+        type: "string"
+        description: "Groq API Key"
+      - name: "DEEPGRAM_API_KEY"
+        type: "string"
+        description: "Deepgram API Key"
+      - name: "CARTESIA_API_KEY"
+        type: "string"
+        description: "Cartesia API Key"
+
+    runtime:
+      type: "executable"
+      command:
+        [
+          "bash",
+          "-c",
+          "cd ../Restaurant-Voice-Agent&& uv sync && uv run main.py console", 
+        ]
+      environment:
+        - name: "LIVEKIT_URL"
+          from: "LIVEKIT_URL"
+        - name: "LIVEKIT_API_KEY"
+          from: "LIVEKIT_API_KEY"
+        - name: "LIVEKIT_API_SECRET"
+          from: "LIVEKIT_API_SECRET"
+        - name: "API_KEY"
+          from: "GROQ_API_KEY"
+        - name: "DEEPGRAM_API_KEY"
+          from: "DEEPGRAM_API_KEY"
+        - name: "CARTESIA_API_KEY"
+          from: "CARTESIA_API_KEY"
 
 ```
 
-### Connect to UI
+
+</details>
+
+<details>
+
+<summary>Option 4: Agents running without docker or orchestrator:</summary>
+
+Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
+
+#### 1. Git clone the repository and install dependencies
 
 ```bash
-#clone the repository
-git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp.git
+# Clone the repository
+git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
 
-# install dependency
+# Install `uv`:
+pip install uv
+```
+
+##### For Coral Interface Agent
+```bash
+# Navigate to the interface agent agent directory
+cd Coral-Interface-Agent
+
+# Install dependencies from `pyproject.toml` using `uv`:
+uv sync
+```
+
+##### For Restaurant Agent
+```bash
+# Navigate to the monzo agent directory
+cd Restaurant-Voice-Agent
+
+# Install dependencies from `pyproject.toml` using `uv`:
+uv sync
+```
+
+#### 2. Environment Configuration
+
+##### For Coral Interface Agent
+Get the API Key:
+[Groq](https://console.groq.com/keys)
+
+Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
+```bash
+cd Coral-Interface-Agent
+cp -r .env_sample .env
+# Edit .env with your specific configuration
+```
+
+##### For Restaurant Agent
+Get these api keys
+GROQ_API_KEY=[Groq](https://console.groq.com/keys).
+Note:
+If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out there documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
+
+LIVEKIT_API_KEY=your_livekit_api_key_here 
+LIVEKIT_API_SECRET=your_livekit_api_secret_here  
+LIVEKIT_URL=your_livekit_url_here 
+
+Create a `.env` file in the `Restaurant-Voice-Agent` directory based on the `.env.example` file:
+```bash
+cd Restaurant-Voice-Agent
+cp -r env.example .env
+# Edit .env with your specific configuration
+```
+#### UI Frontend
+To use the UI do this setup in a separate terminal:
+```bash
 cd UI
 npm install
-
-cd UI
-
+```
+Create a `.env.local` file in the `UI` directory:
+```bash
 # Create .env.local with these variables:
+
 # LiveKit Configuration
-LIVEKIT_API_KEY=your_livekit_api_key_here  ([Get LiveKit API Key](https://cloud.livekit.io/))
-LIVEKIT_API_SECRET=your_livekit_api_secret_here  ([Get LiveKit API Secret Key](https://cloud.livekit.io/))
-LIVEKIT_URL=your_livekit_url_here  ([Get LiveKit Url](https://cloud.livekit.io/))
+LIVEKIT_API_KEY=your_livekit_api_key_here 
+LIVEKIT_API_SECRET=your_livekit_api_secret_here  
+LIVEKIT_URL=your_livekit_url_here  
 
 # API Endpoint Configuration (for Interface Agent)
 NEXT_PUBLIC_CONN_DETAILS_ENDPOINT=/api/connection-details
 
 # Interface Agent API Endpoint (default: http://localhost:8000)
 NEXT_PUBLIC_INTERFACE_AGENT_API_ENDPOINT=http://localhost:8000
-
-
-# run the application
-npm run dev
-
 ```
+
+#### 3. Run Agents in Separate Terminals
+Start all three components in their respective terminals:
+
+#### Terminal 1: Start Coral Interface Agent
+```bash
+cd Coral-Interface-Agent
+uv run 0-langchain-interface.py
+```
+
+#### Terminal 2: Start Restaurant Voice Agent
+```bash
+cd Restaurant-Voice-Agent
+uv run main.py dev
+```
+
+#### Terminal 3: Start UI Frontend
+```bash
+cd UI
+npm run dev
+```
+
+</details>
 
 </details>
 
