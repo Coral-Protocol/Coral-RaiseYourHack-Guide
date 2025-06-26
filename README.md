@@ -126,7 +126,7 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 ### Qualcomm Track: Personal Finance Advisor
 
-- A comprehensive personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
+- Personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
 - The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent)
 
@@ -473,7 +473,7 @@ uv run langchain-monzo-agent.py
 
 ### Prosus Track: Restaurant Agentic System Webapp
 
-- A comprehensive restaurant voice agent system to provide an intelligent conversational experience for restaurant interactions.
+- Restaurant voice agent system to provide an intelligent conversational experience for restaurant interactions.
 - A voice-enabled system that handles customer reservations, takeaway orders, and payments without human staff intervention
 - Uses Interface Agent to coordinate user instructions and Restaurant Voice Agent to manage real-time voice conversations across specialized functions
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Interface-Agent-for-Webapp) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
