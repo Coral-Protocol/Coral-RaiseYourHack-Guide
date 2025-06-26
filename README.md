@@ -852,7 +852,11 @@ npm run dev
 
 - Try Now Button: Click the "Try Now" button to be directed to the main page
 
-- Start Conversation: On the main page, press the "Start Conversation" button for the restaurant agent
+![Prosus Demo 1](images/prosus-demo-img1.png)
+
+- Start Conversation: On the main page, press the "Start Restaurant Conversation" button for the restaurant agent
+
+![Prosus Demo 2](images/prosus-demo-img2.png)
 
 - Interact: You can now chat with the agentic system for restaurant-related queries and interactions
 
