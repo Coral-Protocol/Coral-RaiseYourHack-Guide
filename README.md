@@ -853,7 +853,7 @@ ssh root@95.179.233.169
 
 <details>
 
-### How to run:
+### 1. How to run:
 
 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
