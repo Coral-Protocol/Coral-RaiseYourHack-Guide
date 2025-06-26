@@ -844,9 +844,9 @@ npm run dev
 
 ### 2. How to Connect to UI:
 
-<summary>Click to expand UI app running instructions</summary>
-
 <details>
+
+<summary>Click to expand UI app running instructions</summary>
 
 - Access the Application: Open your browser and navigate to the UI application (typically http://localhost:3000)
 
