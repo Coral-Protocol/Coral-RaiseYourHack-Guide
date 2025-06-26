@@ -502,7 +502,9 @@ GROQ_API_KEY=[Groq](https://console.groq.com/keys).
 Note: If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out their documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
 
 LIVEKIT_API_KEY=your_livekit_api_key_here 
-LIVEKIT_API_SECRET=your_livekit_api_secret_here  
+
+LIVEKIT_API_SECRET=your_livekit_api_secret_here 
+
 LIVEKIT_URL=your_livekit_url_here  
 
 Create a `.env` file in the `Restaurant-Voice-Agent` directory based on the `.env.example` file:
@@ -568,7 +570,7 @@ registry:
 
     runtime:
       type: "docker"
-      image: "coralprotocol/coral-interface-agent:latest"
+      image: "coralprotocol/coral-interface-agent-for-webapp:latest"
       environment:
         - name: "API_KEY"
           from: "GROQ_API_KEY"
@@ -658,7 +660,7 @@ registry:
         [
           "bash",
           "-c",
-          "cd ../Coral-Interface-Agent && uv sync && uv run 0-langchain-interface.py",
+          "cd ../Interface-Agent-for-Webapp && uv sync && uv run 0-langchain-interface.py",
         ]
       environment:
         - name: "API_KEY"
@@ -733,7 +735,7 @@ pip install uv
 ##### For Coral Interface Agent
 ```bash
 # Navigate to the interface agent agent directory
-cd Coral-Interface-Agent
+cd Interface-Agent-for-Webapp
 
 # Install dependencies from `pyproject.toml` using `uv`:
 uv sync
@@ -754,9 +756,9 @@ uv sync
 Get the API Key:
 [Groq](https://console.groq.com/keys)
 
-Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
+Create a `.env` file in the `Interface-Agent-for-Webapp` directory based on the `.env_sample` file:
 ```bash
-cd Coral-Interface-Agent
+cd Interface-Agent-for-Webapp
 cp -r .env_sample .env
 # Edit .env with your specific configuration
 ```
@@ -805,7 +807,7 @@ Start all three components in their respective terminals:
 
 #### Terminal 1: Start Coral Interface Agent
 ```bash
-cd Coral-Interface-Agent
+cd Interface-Agent-for-Webappt
 uv run 0-langchain-interface.py
 ```
 
@@ -822,6 +824,16 @@ npm run dev
 ```
 
 </details>
+
+#### Usage 
+
+- Access the Application: Open your browser and navigate to the UI application (typically http://localhost:3000)
+
+- Try Now Button: Click the "Try Now" button to be directed to the main page
+
+- Start Conversation: On the main page, press the "Start Conversation" button for the restaurant agent
+
+- Interact: You can now chat with the agentic system for restaurant-related queries and interactions
 
 </details>
 
