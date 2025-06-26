@@ -448,6 +448,8 @@ cd Coral-Monzo-Agent
 uv run langchain-monzo-agent.py
 ```
 
+</details>
+
 ### 3. Sample Input/ Output
 
 #### 1. Input
@@ -461,8 +463,6 @@ uv run langchain-monzo-agent.py
 ```bash
 
 ```
-
-</details>
 
 </details>
 
@@ -837,7 +837,7 @@ npm run dev
 
 </details>
 
-### 2. Usage 
+### 2. Connect to UI 
 
 - Access the Application: Open your browser and navigate to the UI application (typically http://localhost:3000)
 
