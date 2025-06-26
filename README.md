@@ -498,8 +498,8 @@ cp -r .env_sample .env
 ##### For Restaurant Agent:
 Get these api keys
 GROQ_API_KEY=[Groq](https://console.groq.com/keys).
-Note:
-If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out their documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
+
+Note: If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out their documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
 
 LIVEKIT_API_KEY=your_livekit_api_key_here 
 LIVEKIT_API_SECRET=your_livekit_api_secret_here  
@@ -764,6 +764,7 @@ cp -r .env_sample .env
 ##### For Restaurant Agent
 Get these api keys
 GROQ_API_KEY=[Groq](https://console.groq.com/keys).
+
 Note:
 If you want to use cloud services by Livekit then use [Livekit Cloud](https://cloud.livekit.io/) for these api keys and url but for Self hosting you can check out there documentation for [Self Hosting](https://docs.livekit.io/home/self-hosting/local/).
 
