@@ -448,7 +448,19 @@ cd Coral-Monzo-Agent
 uv run langchain-monzo-agent.py
 ```
 
+### 3. Sample Input/ Output
 
+#### 1. Input
+
+```bash
+
+```
+
+#### 2. Output
+
+```bash
+
+```
 
 </details>
 
@@ -825,7 +837,7 @@ npm run dev
 
 </details>
 
-#### Usage 
+### 2. Usage 
 
 - Access the Application: Open your browser and navigate to the UI application (typically http://localhost:3000)
 
@@ -834,6 +846,20 @@ npm run dev
 - Start Conversation: On the main page, press the "Start Conversation" button for the restaurant agent
 
 - Interact: You can now chat with the agentic system for restaurant-related queries and interactions
+
+### 3. Sample Input/ Output
+
+#### 1. Input
+
+```bash
+
+```
+
+#### 2. Output
+
+```bash
+
+```
 
 </details>
 
