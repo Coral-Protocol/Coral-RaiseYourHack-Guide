@@ -133,7 +133,7 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 <details>
 
-### How to set up local moel:
+### 1. How to set up local moel:
 
 <details>
 
@@ -174,7 +174,7 @@ Make sure no errors occur and Ollama is running at `http://localhost:11434`.
 
 </details>
 
-### How to run:
+### 2. How to run:
 
 <details>
 
@@ -464,7 +464,7 @@ uv run langchain-monzo-agent.py
 
 <details>
 
-### How to run:
+### 1. How to run:
 
 <details>
 
