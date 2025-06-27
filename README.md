@@ -129,6 +129,7 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 - Personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
 - The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent)
+- [Demo Video](https://drive.google.com/file/d/11A0sDDd2bpit54RNpXSNKxJfJOpatDkU/view?usp=sharing)
 
 
 <details>
