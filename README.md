@@ -908,7 +908,7 @@ You can also talk directly to the restaurant agent using voice, but only when it
 ```bash
 The restaurant agent will greet you and listen to your queries.  
 
-When using the interface agent, it will communicate with the restaurant agent through Coral tools. The restaurant agent will reply to the interface agent, but it will not speak based on the interface agent's request.  
+When using the interface agent, it will communicate with the restaurant agent through Coral tools. The restaurant agent will reply to the interface agent.
 
 For speech-based interaction, you need to talk to the restaurant agent directly.
 ```
