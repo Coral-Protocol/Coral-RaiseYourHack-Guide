@@ -849,7 +849,7 @@ Start all three components in their respective terminals:
 
 #### Terminal 1: Start Coral Interface Agent
 ```bash
-cd Interface-Agent-for-Webappt
+cd Interface-Agent-for-Webapp
 uv run 0-langchain-interface.py
 ```
 
