@@ -519,7 +519,7 @@ Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) i
 
 ```bash
 # Clone the repository
-git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
+git clone https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample
 
 # Pull docker images
 docker pull coralprotocol/coral-interface-agent-for-webapp
@@ -672,8 +672,8 @@ registry:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
-cd Restaurant-Agentic-Webapp
+git clone https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample
+cd Coral-RaiseYourHack-ProsusTrackExample
 ```
 #### 3. Update the config by updating the "application.yml" file
 
@@ -769,7 +769,7 @@ Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) i
 
 ```bash
 # Clone the repository
-git clone https://github.com/Coral-Protocol/Restaurant-Agentic-Webapp
+git clone https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample
 
 # Install `uv`:
 pip install uv
