@@ -156,7 +156,37 @@ yarn dev
 
 <details>
 
-<summary>Install yarn if UNAVAILABLE in order to run Coral Studio</summary>
+<summary>Install Java if UNAVAILABLE in order to run Coral Server</summary>
+
+Install Java
+
+```bash
+
+# Apt update
+sudo apt update
+
+# Install the JDK
+sudo apt install openjdk-17-jdk
+
+# Check version
+java -version
+```
+
+Run Coral Server
+
+```bash
+
+./gradlew run
+
+```
+
+</details>
+
+<details>
+
+<summary>Install Yarn if UNAVAILABLE in order to run Coral Studio</summary>
+
+Install Yarn
 
 ```bash
 # Download and install nvm:
@@ -177,7 +207,23 @@ corepack enable yarn
 
 # Verify Yarn version:
 yarn -v
+
+# Install from yarn
+yarn install
+
+# Allow port for eternal access
+sudo ufw allow 5173
+
 ```
+
+Run Coral Studio
+
+```bash
+
+yarn dev
+
+```
+
 </details>
 
 </details>
