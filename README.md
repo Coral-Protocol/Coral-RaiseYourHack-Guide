@@ -142,15 +142,9 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 
 - In order to test if both are working, open the same instance in two terminals and run both simultaneously.
 
-- Ensure the server’s firewall allows incoming connections on port 5173 (or the port Studio is using). You may need to open this port using a command like
-
 ```bash
-
-# allow external port access
-sudo ufw allow 5173
-
-# run studio using --host
-yarn dev --host
+# run studio
+yarn dev
 ```
 - You will see both running like this simultaneously if succesful and should be able to access Coral Studio from your browser.
 
