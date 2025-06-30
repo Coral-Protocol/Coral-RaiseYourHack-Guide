@@ -129,127 +129,96 @@ Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents usi
 - Personal finance advisor system that  to provides secure, intelligent, and privacy-preserving financial management through natural language interaction using Coral Monzo Agent.
 - The Monzo Agent enables users to safely access and analyze their Monzo banking data using a local LLM, ensuring sensitive information never leaves their device. By integrating with Monzo’s official API and customized toolkits, the system supports conversational account balance checks, transaction history queries, and personalized financial advice.
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) | [Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent)
-- [Demo Video](https://drive.google.com/file/d/11A0sDDd2bpit54RNpXSNKxJfJOpatDkU/view?usp=sharing)
+- [Demo Video](https://drive.google.com/file/d/1carCDjr-sZbTs5OOmzwSPsLItCwbnW0Y/view?usp=sharing)
 
 
 <details>
 
-### 1. How to set up local model:
+### 1. Setup Coral Server and Coral Studio
 
 <details>
 
-<summary>Click to expand Ollama instructions</summary>
+- To setup the [Coral Server](https://github.com/Coral-Protocol/coral-server) and [Coral Studio UI](https://github.com/Coral-Protocol/coral-studio), follow the steps given in repository to install.
 
-Monzo Agent uses Ollama to run local LLM. Please make sure you have Ollama installed and the desired model downloaded before running the agent.
+- In order to test if both are working, open the same instance in two terminals and run both simultaneously.
 
-**1. Install Ollama**
-
-- **Linux/macOS:**
-  Follow the official instructions: [https://ollama.com/download](https://ollama.com/download)
-  Or run:
-  ```bash
-  curl -fsSL https://ollama.com/install.sh | sh
-  ```
-- **Windows:**
-  Download the installer from [Ollama's website](https://ollama.com/download).
-
-**2. Download Local model**
+- Ensure the server’s firewall allows incoming connections on port 5173 (or the port Studio is using). You may need to open this port using a command like
 
 ```bash
-ollama pull qwen3:latest
+
+# allow external port access
+sudo ufw allow 5173
+
+# run studio using --host
+yarn dev --host
 ```
+- You will see both running like this simultaneously if succesful and should be able to access Coral Studio from your browser.
 
-**3. Start Ollama Service**
+![Coral Server and Studio Running](images/server-studio.png)
 
-Ollama usually starts automatically. If not, start it manually:
+- On Coral Studio, ensure the connection to Coral Server.
+
+![Coral Server and Studio Connection UI](images/coral-connection.png)
+
+<details>
+
+<summary>Install yarn if UNAVAILABLE in order to run Coral Studio</summary>
+
 ```bash
-ollama serve
-```
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-**4. Verify the model is running**
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
 
-```bash
-ollama list
+# Download and install Node.js:
+nvm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.17.0".
+nvm current # Should print "v22.17.0".
+
+# Download and install Yarn:
+corepack enable yarn
+
+# Verify Yarn version:
+yarn -v
 ```
-Make sure no errors occur and Ollama is running at `http://localhost:11434`.
+</details>
 
 </details>
 
-### 2. How to run:
+### 2. Setup the Agents
 
-<details>
+<details>  
 
-<summary>Option 1: Agents running on docker without orchestrator:</summary>
+- Terminate the Coral Server and Coral Studio connections from above and start below steps.
+- In this example, we are using the agents: [Coral Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Coral Monzo Agent](https://github.com/Coral-Protocol/Coral-Monzo-Agent).  
+- Please click on the link and set up the agents by following the setup instructions in the repository.  
+- Check the output below to see how the terminal will look after succesfull installation, keep in mind the directory you are at while doing `uv sync`.
 
-Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
-
-#### 1. Git clone and pull docker image
-
-```bash
-# Clone the repository
-git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
-
-# Pull docker images
-docker pull coralprotocol/coral-interface-agent
-docker pull coralprotocol/coral-monzo-agent
-```
-
-#### 2. Environment Configuration
-
-##### For Coral Interface Agent:
-Get the API Key: [OpenAI](https://platform.openai.com/api-keys).
-
-Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
-```bash
-cd Coral-Interface-Agent
-cp -r .env_sample .env
-# Edit .env with your specific configuration
-```
-
-##### For Monzo Agent:
-Get the `MONZO_ACCESS_TOKEN` and `MONZO_ACCOUNT_ID`:[Monzo Developer Portal](https://developers.monzo.com/).
-
-Create a `.env` file in the `Coral-Monzo-Agent` directory based on the `.env.example` file:
-```bash
-cd Coral-Monzo-Agent
-cp -r env_example .env
-# Edit .env with your specific configuration
-```
-
-#### 3. Run Agents in Separate Terminals
-
-##### For Coral Interface Agent:
-
-```bash
-cd Coral-Interface-Agent
-docker run --network host --env-file .env -it coralprotocol/coral-interface-agent
-```
-
-##### For Monzo Agent:
-
-```bash
-cd Coral-Monzo-Agent
-docker run --network host --env-file .env -it coralprotocol/coral-monzo-agent
-```
 
 </details>
 
+### 3. Run the Agents
+
 <details>
 
-<summary>Option 2: Agents running on docker with orchestrator:</summary>
+<summary>You can run in either of the below modes to get your system running.</summary>
 
-#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+#### 1. Executable Mode
 
-#### 2. Pull the docker image
+<details>
+
+- The Executable Mode is part of the Coral Protocol Orchestrator which works with [Coral Studio UI](https://github.com/Coral-Protocol/coral-studio).  
+
+- Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp).  
+
+- Update the file: `coral-server/src/main/resources/application.yaml` with the details below. 
 
 ```bash
-docker pull coralprotocol/coral-interface-agent
-docker pull coralprotocol/coral-monzo-agent
-```
+# replace "root" with YOUR/PROJECT/DIRECTORY if different
 
-#### 3. Update the config by updating the "application.yml" file
-
-```bash
 applications:
   - id: "app"
     name: "Default Application"
@@ -262,237 +231,94 @@ applications:
 registry:
   interface:
     options:
-      - name: "OPENAI_API_KEY"
+      - name: "API_KEY"
         type: "string"
-        description: "OpenAI API Key"
-      - name: "HUMAN_RESPONSE"
-        type: "string"
-        description: "Human response to be used in the interface agent"
-
+        description: "API key for the service"
     runtime:
-      type: "docker"
-      image: "coralprotocol/coral-interface-agent:latest"
+      type: "executable"
+      command: ["bash", "-c", "/root/Coral-Interface-Agent/run_agent.sh main.py"]
       environment:
         - name: "API_KEY"
-          from: "OPENAI_API_KEY"
-        - name: "HUMAN_RESPONSE"
-          from: "HUMAN_RESPONSE"
-
+          from: "API_KEY"
+        - name: "MODEL_NAME"
+          value: "gpt-4.1"
+        - name: "MODEL_PROVIDER"
+          value: "openai"
+        - name: "MODEL_TOKEN"
+          value: "16000"
+        - name: "MODEL_TEMPERATURE"
+          value: "0.3"
+          
   monzo:
     options:
+      - name: "API_KEY"
+        type: "string"
+        description: "API key for the service"
       - name: "MONZO_ACCESS_TOKEN"
         type: "string"
-        description: "monzo access token"
+        description: "MONZO_ACCESS_TOKEN"
       - name: "MONZO_ACCOUNT_ID"
         type: "string"
-        description: "monzo account id"
-
+        description: "MONZO_ACCOUNT_ID"
     runtime:
-      type: "docker"
-      image: "coralprotocol/coral-monzo-agent:latest"
+      type: "executable"
+      command: ["bash", "-c", "/root/Coral-Monzo-Agent/run_agent.sh main.py"]
+      
       environment:
+        - name: "API_KEY"
+          from: "API_KEY"
+        - name: "MODEL"
+          value: "llama-3.3-70b-versatile"
+        - name: "LLM_MODEL_PROVIDER"
+          value: "groq"
         - name: "MONZO_ACCESS_TOKEN"
           from: "MONZO_ACCESS_TOKEN"
         - name: "MONZO_ACCOUNT_ID"
           from: "MONZO_ACCOUNT_ID"
 ```
 
+- Run the [Coral Server](https://github.com/Coral-Protocol/coral-server) and [Coral Studio](https://github.com/Coral-Protocol/coral-studio). 
+
+- You do not need to set up the `.env` in the project directory for running in this mode; it will be captured through the variables below.  
+
+- After the agents are loaded properly, you will see "2 agents" connected. Proceed ahead with "Select Session", add the agents, api key and esure to add both the Custom Tools to the Interface Agent.
+
+![Vultr Instance](images/agent-connected.png)  
 
 </details>
 
-<details>
-
-<summary>Option 3: Agents running on executable with orchestrator:</summary>
-
-#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
-
-#### 2. Git clone the repository
-
-```bash
-# Clone the repository
-git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
-cd Qualcomn-Track-use-case-example----Personal-finance-advisor
-```
-#### 3. Update the config by updating the "application.yml" file
-
-```bash
-applications:
-  - id: "app"
-    name: "Default Application"
-    description: "Default application for testing"
-    privacyKeys:
-      - "default-key"
-      - "public"
-      - "priv"
-
-# Registry of agents we can orchestrate
-registry:
-  interface-local:
-      options:
-        - name: "OPENAI_API_KEY"
-          type: "string"
-          description: "OpenAI API Key"
-        - name: "HUMAN_RESPONSE"
-          type: "string"
-          description: "Human response to be used in the interface agent"
-  
-      runtime:
-        type: "executable"
-        command:
-          [
-            "bash",
-            "-c",
-            "cd ../Coral-Interface-Agent && uv sync && uv run 0-langchain-interface.py",
-          ]
-        environment:
-          - name: "API_KEY"
-            from: "OPENAI_API_KEY"
-          - name: "HUMAN_RESPONSE"
-            from: "HUMAN_RESPONSE"
-
-  Monzo:
-      options:
-        - name: "MONZO_ACCESS_TOKEN"
-          type: "string"
-          description: "monzo access token"
-        - name: "MONZO_ACCOUNT_ID"
-          type: "string"
-          description: "monzo account id"
-  
-      runtime:
-        type: "executable"
-        command:
-          [
-            "bash",
-            "-c",
-            "cd ../Coral-Monzo-Agent && uv sync && uv run langchain-monzo-agent.py",
-          ]
-        environment:
-          - name: "MONZO_ACCESS_TOKEN"
-            from: "MONZO_ACCESS_TOKEN"
-          - name: "MONZO_ACCOUNT_ID"
-            from: "MONZO_ACCOUNT_ID"
-```
-
-
-</details>
+#### 2. Dev Mode
 
 <details>
 
-<summary>Option 4: Agents running without docker or orchestrator:</summary>
+- The Dev Mode allows the Coral Server and all agents to be seaprately running on each terminal without UI support.  
 
-Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
+- Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system and run below commands in separate terminals.
 
-#### 1. Git clone the repository and install dependencies
+- Ensure that you have setup the `.env` file with required keys.  
+
+Run the Interface Agent
 
 ```bash
-# Clone the repository
-git clone https://github.com/Coral-Protocol/Qualcomn-Track-use-case-example----Personal-finance-advisor.git
-
-# Install `uv`:
-pip install uv
-```
-
-##### For Coral Interface Agent
-```bash
-# Navigate to the interface agent agent directory
+# cd to directory
 cd Coral-Interface-Agent
 
-# Install dependencies from `pyproject.toml` using `uv`:
-uv sync
+# Run the agent using `uv`:
+uv run python main.py
 ```
 
-##### For Monzo Agent
+Run the Pandas Agent
+
 ```bash
-# Navigate to the monzo agent directory
+# cd to directory
 cd Coral-Monzo-Agent
 
-# Install dependencies from `pyproject.toml` using `uv`:
-uv sync
-```
-
-#### 2. Environment Configuration
-
-##### For Coral Interface Agent
-Get the API Key: [OpenAI](https://platform.openai.com/api-keys).
-
-Create a `.env` file in the `Coral-Interface-Agent` directory based on the `.env_sample` file:
-```bash
-cd Coral-Interface-Agent
-cp -r .env_sample .env
-# Edit .env with your specific configuration
-```
-
-##### For Monzo Agent
-Get the `MONZO_ACCESS_TOKEN` and `MONZO_ACCOUNT_ID`:[Monzo Developer Portal](https://developers.monzo.com/).
-
-Create a `.env` file in the `Coral-Monzo-Agent` directory based on the `.env.example` file:
-```bash
-cd Coral-Monzo-Agent
-cp -r env_example .env
-# Edit .env with your specific configuration
-```
-
-#### 3. Run Agents in Separate Terminals
-
-###### For Coral Interface Agent:
-
-```bash
-cd Coral-Interface-Agent
-uv run 0-langchain-interface.py
-```
-
-###### For Monzo Agent:
-
-```bash
-cd Coral-Monzo-Agent
-uv run langchain-monzo-agent.py
+# Run the agent using `uv`:
+uv run python main.py
 ```
 
 </details>
 
-### 3. How to use:
-
-<details>
-
-<summary>Click to expand sample input/output</summary>
-
-#### 1. Input
-
-```bash
-Help me check my transections of monzo for the last 2 months and give me some personal finance advice.
-```
-
-#### 2. Output
-
-```bash
-Answer: Here is a summary of your Monzo transactions for the past 2 months:
-- May 1: -£22.00 (University, bills)
-- May 14: -£120.00 (Person A, general)
-- May 14: -£20.81 (Mobile Provider, bills)
-- May 18: -£16.00 (Person A, general)
-- May 19: +£9.00 (Person B, income)
-- June 2: -£22.00 (University, bills)
-- June 6: +£6.66 (From Person C, income)
-- June 12: -£20.81 (Mobile Provider, bills)
-- June 17: +£100.00 (From Person C, income)
-
-Notable spending patterns:
-- Regular bills to University and Mobile Provider.
-- Significant general spending to "Person A."
-- Income from Person B and Person C.
-
-Personalized financial advice:
-1. **Track Recurring Bills:** Your regular payments to University and Mobile Provider are predictable. Consider setting up automated budgeting for these to ensure you always have funds allocated.
-2. **Review Large Expenses:** The £120 payment to "Person A" stands out. Review such large transactions to ensure they are necessary and look for ways to reduce or avoid them if possible.
-3. **Increase Savings:** Try to set aside a portion of your income (even small amounts) right after you receive it. Automating savings can help build a financial cushion.
-4. **Monitor Cash Flow:** Your income is irregular. Consider ways to stabilize your income or reduce discretionary spending during lower-income months.
-5. **Analyze General Spending:** Categorize your general expenses to identify areas where you can cut back.
-
-Would you like more detailed budgeting tips or help setting up a savings plan?
-
-Is there anything else I can help you with?
-```
 </details>
 
 </details>
