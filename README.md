@@ -369,7 +369,7 @@ uv run python main.py
 - A voice-enabled system that handles customer reservations, takeaway orders, and payments without human staff intervention
 - Uses Interface Agent to coordinate user instructions and Restaurant Voice Agent to manage real-time voice conversations across specialized functions
 - Agents: [Interface Agent](https://github.com/Coral-Protocol/Interface-Agent-for-Webapp) | [Restaurant Voice Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent)
-- [Demo Video](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)
+- [Demo Video for custom UI](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)
 
 <details>
 
@@ -621,8 +621,6 @@ registry:
           from: "CARTESIA_API_KEY"
 
 ```
-
-
 </details>
 
 <details>
