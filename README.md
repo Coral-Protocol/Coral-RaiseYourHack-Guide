@@ -372,12 +372,121 @@ uv run python main.py
 - [Demo Video for custom UI](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)
 
 <details>
-
-### 1. How to run:
+  
+### 1. Setup Coral Server and Coral Studio
 
 <details>
 
-<summary>Option 3: Agents running on executable with orchestrator:</summary>
+- To setup the [Coral Server](https://github.com/Coral-Protocol/coral-server) and [Coral Studio UI](https://github.com/Coral-Protocol/coral-studio), follow the steps given in repository to install.
+
+- In order to test if both are working, open the same instance in two terminals and run both simultaneously.
+
+```bash
+# run studio
+yarn dev
+```
+- You will see both running like this simultaneously if succesful and should be able to access Coral Studio from your browser.
+
+![Coral Server and Studio Running](images/server-studio.png)
+
+- On Coral Studio, ensure the connection to Coral Server.
+
+![Coral Server and Studio Connection UI](images/coral-connection.png)
+
+<details>
+
+<summary>Install Java if UNAVAILABLE in order to run Coral Server</summary>
+
+Install Java
+
+```bash
+
+# Apt update
+sudo apt update
+
+# Install the JDK
+sudo apt install openjdk-17-jdk
+
+# Check version
+java -version
+```
+
+Run Coral Server
+
+```bash
+
+./gradlew run
+
+```
+
+</details>
+
+<details>
+
+<summary>Install Yarn if UNAVAILABLE in order to run Coral Studio</summary>
+
+Install Yarn
+
+```bash
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.17.0".
+nvm current # Should print "v22.17.0".
+
+# Download and install Yarn:
+corepack enable yarn
+
+# Verify Yarn version:
+yarn -v
+
+# Install from yarn
+yarn install
+
+# Allow port for eternal access
+sudo ufw allow 5173
+
+```
+
+Run Coral Studio
+
+```bash
+
+yarn dev
+
+```
+
+</details>
+
+</details>
+
+### 2. Setup the Agents
+
+<details>  
+
+- Terminate the Coral Server and Coral Studio connections from above and start below steps.
+- In this example, we are using the agents: [Coral Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent) and [Restaurant Agent](https://github.com/Coral-Protocol/Restaurant-Voice-Agent).  
+- Please click on the link and set up the agents by following the setup instructions in the repository.  
+- Check the output below to see how the terminal will look after succesfull installation, keep in mind the directory you are at while doing `uv sync`.
+
+
+</details>
+
+### 3. Run the Agents:
+
+<details>
+ <summary>You can run it in three modes</summary>
+
+<details>
+
+<summary>Option 1: Agents running on executable with orchestrator:</summary>
 
 #### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
@@ -624,6 +733,7 @@ When using the interface agent, it will communicate with the restaurant agent th
 
 For speech-based interaction, you need to talk to the restaurant agent directly.
 ```
+</details>
 </details>
 </details>
 </details>
