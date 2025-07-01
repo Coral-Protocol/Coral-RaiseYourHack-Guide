@@ -569,7 +569,7 @@ registry:
         [
           "bash",
           "-c",
-          "cd ../Interface-Agent-for-Webapp && uv sync && uv run 0-langchain-interface.py",
+          "cd ../Interface-Agent-for-Webapp && uv sync && uv run main.py",
         ]
       environment:
         - name: "API_KEY"
@@ -717,7 +717,7 @@ Start all three components in their respective terminals:
 #### Terminal 1: Start Coral Interface Agent
 ```bash
 cd Interface-Agent-for-Webapp
-uv run 0-langchain-interface.py
+uv run main.py
 ```
 
 #### Terminal 2: Start Restaurant Voice Agent
