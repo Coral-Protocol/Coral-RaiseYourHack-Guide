@@ -627,7 +627,7 @@ registry:
 
 <details>
 
-<summary>Option 4: Agents running without docker or orchestrator:</summary>
+<summary>Option 3: Agents running without Coral-Studio and using custom UI:</summary>
 
 Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
 
@@ -663,7 +663,7 @@ uv sync
 
 ##### For Coral Interface Agent
 Get the API Key:
-[Groq](https://console.groq.com/keys)
+[Openai](https://platform.openai.com/api-keys)
 
 Create a `.env` file in the `Interface-Agent-for-Webapp` directory based on the `.env_sample` file:
 ```bash
@@ -673,7 +673,7 @@ cp -r .env_sample .env
 ```
 
 ##### For Restaurant Agent
-Get these api keys
+Get the api key
 GROQ_API_KEY=[Groq](https://console.groq.com/keys).
 
 Note:
@@ -732,9 +732,9 @@ cd UI
 npm run dev
 ```
 
-</details>
 
-### 2. How to Connect to UI:
+
+### How to Connect to UI:
 
 <details>
 
@@ -754,7 +754,7 @@ npm run dev
 
 </details>
 
-### 3. How to use:
+### How to use:
 
 <summary>Click to expand sample input/output</summary>
 
@@ -780,7 +780,7 @@ When using the interface agent, it will communicate with the restaurant agent th
 For speech-based interaction, you need to talk to the restaurant agent directly.
 ```
 </details>
-
+</details>
 </details>
 
 ### Vultr Track: Spreadsheet Query Agent
