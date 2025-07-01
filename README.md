@@ -482,7 +482,7 @@ yarn dev
 ### 3. Run the Agents:
 
 <details>
- <summary>You can run it in three modes</summary>
+ <summary>You can run it in three modes but Dev mode is preferable for begginer</summary>
 
 <details>
 
@@ -590,6 +590,37 @@ registry:
 
 ![Vultr Instance](images/agent-connected.png) 
 
+</details>
+
+<details>
+  <summary>Option 2:Dev Mode(Running on terminal) </summary>
+  - The Dev Mode allows the Coral Server and all agents to be seaprately running on each terminal without UI support.  
+
+- Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system and run below commands in separate terminals.
+
+- Ensure that you have setup the `.env` file with required keys.
+  
+Make Sure you run both agents at approximately same time:
+
+Run the Interface Agent
+
+```bash
+# cd to directory
+cd Coral-Interface-Agent
+
+# Run the agent using `uv`:
+uv run python main.py
+```
+
+Run the Restaurant Agent
+
+```bash
+# cd to directory
+cd Restaurant-Voice-Agent
+
+# Run the agent using `uv`:
+uv run main.py console
+```
 </details>
 
 <details>
