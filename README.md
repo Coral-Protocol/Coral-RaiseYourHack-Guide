@@ -344,17 +344,17 @@ Run the Interface Agent
 cd Coral-Interface-Agent
 
 # Run the agent using `uv`:
-uv run python main.py
+uv run main.py
 ```
 
-Run the Pandas Agent
+Run the Monzo Agent
 
 ```bash
 # cd to directory
 cd Coral-Monzo-Agent
 
 # Run the agent using `uv`:
-uv run python main.py
+uv run main.py
 ```
 
 </details>
