@@ -323,7 +323,7 @@ registry:
 
 - After the agents are loaded properly, you will see "2 agents" connected. Proceed ahead with "Select Session", add the agents, api key and esure to add both the Custom Tools to the Interface Agent.
 
-![Vultr Instance](images/agent-connected.png)  
+![Vultr Instance](images/agent-connected_qualcomn.png)  
 
 </details>
 
