@@ -486,20 +486,18 @@ yarn dev
 
 <details>
 
-<summary>Option 1: Agents running on executable with orchestrator:</summary>
 
-#### 1. Follow the steps in [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+<summary>Option 1: Agents running on executable with orchestrator on Coral-Studio:</summary>
 
-#### 2. Git clone the repository
+- The Executable Mode is part of the Coral Protocol Orchestrator which works with [Coral Studio UI](https://github.com/Coral-Protocol/coral-studio).  
 
-```bash
-# Clone the repository
-git clone https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample
-cd Coral-RaiseYourHack-ProsusTrackExample
-```
-#### 3. Update the config by updating the "application.yml" file
+- Checkout: [How to Build a Multi-Agent System with Awesome Open Source Agents using Coral Protocol](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp).  
+
+- Update the file: `coral-server/src/main/resources/application.yaml` with the details below. 
 
 ```bash
+# Replace "root" with your project directory if different
+
 applications:
   - id: "app"
     name: "Default Application"
@@ -510,76 +508,92 @@ applications:
       - "priv"
 
 registry:
-  interface-local:
-    options:
-      - name: "GROQ_API_KEY"
-        type: "string"
-        description: "Groq API Key"
-      - name: "HUMAN_RESPONSE"
-        type: "string"
-        description: "Human response to be used in the interface agent"
 
+  interface:
+    options:
+      - name: "API_KEY"
+        type: "string"
+        description: "API key for the service"
     runtime:
       type: "executable"
-      command:
-        [
-          "bash",
-          "-c",
-          "cd ../Interface-Agent-for-Webapp && uv sync && uv run main.py",
-        ]
+      command: ["bash", "-c", "/root/Coral-Interface-Agent/run_agent.sh main.py"]
       environment:
         - name: "API_KEY"
-          from: "GROQ_API_KEY"
-        - name: "HUMAN_RESPONSE"
-          from: "HUMAN_RESPONSE"
+          from: "API_KEY"
+        - name: "MODEL_NAME"
+          value: "gpt-4.1"
+        - name: "MODEL_PROVIDER"
+          value: "openai"
+        - name: "MODEL_TOKEN"
+          value: "16000"
+        - name: "MODEL_TEMPERATURE"
+          value: "0.3"
 
   restaurant:
     options:
+      - name: "API_KEY"
+        type: "string"
+        description: "API key for the service"
       - name: "LIVEKIT_URL"
         type: "string"
-        description: "LiveKit Server URL"
+        description: "LIVEKIT URL"
       - name: "LIVEKIT_API_KEY"
         type: "string"
-        description: "LiveKit API Key"
+        description: "LIVEKIT API Key"
       - name: "LIVEKIT_API_SECRET"
         type: "string"
-        description: "LiveKit API Secret"
-      - name: "GROQ_API_KEY"
-        type: "string"
-        description: "Groq API Key"
+        description: "LIVEKIT API Secret"
       - name: "DEEPGRAM_API_KEY"
         type: "string"
         description: "Deepgram API Key"
       - name: "CARTESIA_API_KEY"
         type: "string"
         description: "Cartesia API Key"
-
     runtime:
       type: "executable"
-      command:
-        [
-          "bash",
-          "-c",
-          "cd ../Restaurant-Voice-Agent&& uv sync && uv run main.py console", 
-        ]
+      command: ["bash", "-c", "/root/Restaurant-Voice-Agent/run_agent.sh main.py console"]
       environment:
+        - name: "MODEL_NAME"
+          value: "gpt-4.1"
+        - name: "MODEL_PROVIDER"
+          value: "openai"
+        - name: "API_KEY"
+          from: "API_KEY"
+        - name: "MODEL_TOKEN"
+          value: "16000"
+        - name: "MODEL_TEMPERATURE"
+          value: "0.3"
+        - name: "LLM_PROVIDER"
+          value: "openai"
+        - name: "LLM_MODEL"
+          value: "gpt-4o-mini"
+        - name: "OPENAI_API_KEY"
+          from: "API_KEY"
         - name: "LIVEKIT_URL"
           from: "LIVEKIT_URL"
         - name: "LIVEKIT_API_KEY"
           from: "LIVEKIT_API_KEY"
         - name: "LIVEKIT_API_SECRET"
           from: "LIVEKIT_API_SECRET"
-        - name: "API_KEY"
-          from: "GROQ_API_KEY"
         - name: "DEEPGRAM_API_KEY"
           from: "DEEPGRAM_API_KEY"
         - name: "CARTESIA_API_KEY"
           from: "CARTESIA_API_KEY"
 
 ```
+
+- Run the [Coral Server](https://github.com/Coral-Protocol/coral-server) and [Coral Studio](https://github.com/Coral-Protocol/coral-studio). 
+
+- You do not need to set up the `.env` in the project directory for running in this mode; it will be captured through the variables below.  
+
+- After the agents are loaded properly, you will see "2 agents" connected. Proceed ahead with "Select Session", add the agents, api key and esure to add both the Custom Tools to the Interface Agent.
+
+![Vultr Instance](images/agent-connected.png) 
+
 </details>
 
 <details>
+
 
 <summary>Option 3: Agents running without Coral-Studio and using custom UI:</summary>
 
