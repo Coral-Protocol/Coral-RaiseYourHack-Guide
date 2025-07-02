@@ -44,12 +44,8 @@ Dive deeper with our tutorial: **<https://github.com/Coral-Protocol/existing-age
 ---
 
 ### Prosus: Agentic Voice Restaurant-Ordering Web App (Groq & LiveKit)
-<details>
-
-
 This Restaurant Voice Agent system delivers an intelligent conversational experience for reservations, takeaway orders, and payments.
-
-![Restaurant Voice Agent screenshot](attachment:9de5625b-3019-4bec-9ddf-5807aa9f8a7d:Screenshot_2025-07-02_at_15.40.47.png)
+<details>
 
 #### How it works
 
@@ -82,14 +78,15 @@ CARTESIA\_API\_KEY
 
 ---
 </details>
+<img width="3366" alt="ryh1" src="https://github.com/user-attachments/assets/f3081897-4cba-4ad9-91dc-24dcbbf49077" />
 
 
 ### Qualcomm: Agentic Finance-Tracker System w/ Llama on Qualcomm HW
-<details>
-
 A personal-finance advisor that provides secure, privacy-preserving money management via natural-language interaction with a Coral Monzo Agent.
 
-![Monzo Agent screenshot](attachment:742ee4db-3347-4088-90ec-6166145c54d4:Monzo_agent_new.png)
+<details>
+![ryh3](https://github.com/user-attachments/assets/7be84481-3877-407f-ab8b-8e42ea3aa421)
+
 
 #### How it works
 
@@ -119,11 +116,12 @@ MONZO\_ACCOUNT\_ID
 ---
 </details>
 
-### Vultr: Enterprise Spreadsheet-Automation (Llama on Vultr Cloud)
-<details>
+![ryh3 4](https://github.com/user-attachments/assets/f552366b-9973-416c-93ed-4aadefd59b1a)
 
+### Vultr: Enterprise Spreadsheet-Automation (Llama on Vultr Cloud)
 Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-agent collaboration.
 
+<details>
 ![Vultr Spreadsheet Automation screenshot](attachment:26d0df9c-8227-434f-accd-d8c4765e6217:vultr_3.png)
 
 #### Introduction
@@ -145,6 +143,9 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 ---
 </details>
 
+![ryh2](https://github.com/user-attachments/assets/a96ce6a0-bc1b-4223-b5e9-60c96a0eada0)
+
+
 ## Support
 
 Have questions? Join our Discord and post in **#dev-support**.  
@@ -157,4 +158,3 @@ If you believe you’ve found a bug or have a feature request, open a GitHub iss
 ## Thank You
 
 We can’t wait to see what you build—good luck, and don’t forget to ⭐ the repos you find helpful!
-```
