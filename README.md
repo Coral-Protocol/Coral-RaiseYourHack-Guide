@@ -60,16 +60,12 @@ This Restaurant Voice Agent system delivers an intelligent conversational experi
 
 #### API keys required
 
-```
-
-API\_KEY            # OpenAI or Groq
-LIVEKIT\_URL
-LIVEKIT\_API\_KEY
-LIVEKIT\_API\_SECRET
-DEEPGRAM\_API\_KEY
-CARTESIA\_API\_KEY
-
-```
+- **`API_KEY`** – [OpenAI](https://platform.openai.com/api-keys) / [Groq](https://console.groq.com/keys)
+- **`LIVEKIT_URL`** – [LiveKit Cloud](https://cloud.livekit.io/)
+- **`LIVEKIT_API_KEY`** – [LiveKit Cloud](https://cloud.livekit.io/)
+- **`LIVEKIT_API_SECRET`** – [LiveKit Cloud](https://cloud.livekit.io/)
+- **`DEEPGRAM_API_KEY`** – [Deepgram](https://deepgram.com/)
+- **`CARTESIA_API_KEY`** – [Cartesia](https://play.cartesia.ai/keys)
 
 #### Resources
 
@@ -100,13 +96,9 @@ A personal-finance advisor that provides secure, privacy-preserving money manage
 
 #### API keys required
 
-```
-
-API\_KEY            # OpenAI or Groq
-MONZO\_ACCESS\_TOKEN
-MONZO\_ACCOUNT\_ID
-
-```
+- **`API_KEY`** – [OpenAI](https://platform.openai.com/api-keys) / [Groq](https://console.groq.com/keys)
+- **`MONZO_ACCESS_TOKEN`** – [Monzo Developer Portal](https://developers.monzo.com/)
+- **`MONZO_ACCOUNT_ID`** – [Monzo Developer Portal](https://developers.monzo.com/)
 
 #### Resources
 
@@ -122,7 +114,6 @@ MONZO\_ACCOUNT\_ID
 Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-agent collaboration.
 
 <details>
-![Vultr Spreadsheet Automation screenshot](attachment:26d0df9c-8227-434f-accd-d8c4765e6217:vultr_3.png)
 
 #### Introduction
 
