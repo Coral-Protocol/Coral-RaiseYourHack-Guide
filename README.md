@@ -86,8 +86,6 @@ A personal-finance advisor that provides secure, privacy-preserving money manage
 ![ryh3 4](https://github.com/user-attachments/assets/f552366b-9973-416c-93ed-4aadefd59b1a)
 
 <details>
-![ryh3](https://github.com/user-attachments/assets/7be84481-3877-407f-ab8b-8e42ea3aa421)
-
 
 #### How it works
 
