@@ -72,7 +72,7 @@ This Restaurant Voice Agent system delivers an intelligent conversational experi
 
 #### Resources
 
-- **Demo video:** [Link](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)  
+- **Demo video:** [Link](https://drive.google.com/file/d/1aUT95e2FwuBFzrCZJsMhcwcqMF9VqHV4/view)  
 - **Source code:** [Link](https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample/tree/main)  
 
 ---
