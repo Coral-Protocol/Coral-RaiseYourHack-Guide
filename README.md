@@ -32,7 +32,7 @@ It lets agents from any framework, language, or vendor work together in multi-ag
 - [**Agent developers**](https://docs.coralprotocol.org/CoralDoc/CoreConcepts/Actors) earn incentives when their agents are used.  
 - [**Application developers**](https://docs.coralprotocol.org/CoralDoc/CoreConcepts/Actors) can mix and match agents from Coral’s growing [library](https://github.com/Coral-Protocol/awesome-composable-agents) to assemble advanced systems faster and without vendor lock-in.
 
-Dive deeper with our tutorial: **<https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp>**
+[**Dive deeper with our tutorial**](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
 
 ---
 
@@ -69,8 +69,8 @@ This Restaurant Voice Agent system delivers an intelligent conversational experi
 
 #### Resources
 
-- **Demo video:** <https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view>  
-- **Source code:** <https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample/tree/main>
+- **Demo video:** [Link](https://drive.google.com/file/d/1LtUfTUzV9MPEPY7b4alElDiJoml7E089/view)  
+- **Source code:** [Link](https://github.com/Coral-Protocol/Coral-RaiseYourHack-ProsusTrackExample/tree/main)  
 
 ---
 </details>
@@ -132,8 +132,8 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 
 #### Resources
 
-- **Demo video:** <https://drive.google.com/file/d/1JlGDdraESduyIm44QvnJT2aiUzaRoi02/view?usp=sharing>  
-- **Source code:** <https://github.com/Coral-Protocol/Vultr-Enterprise-Spreadsheet-Automation/tree/main>
+- **Demo video:** [Link](https://drive.google.com/file/d/1JlGDdraESduyIm44QvnJT2aiUzaRoi02/view?usp=sharing)  
+- **Source code:** [Link](https://github.com/Coral-Protocol/Vultr-Enterprise-Spreadsheet-Automation/tree/main)  
 
 ---
 </details>
