@@ -113,6 +113,9 @@ A personal-finance advisor that provides secure, privacy-preserving money manage
 ### Vultr: Enterprise Spreadsheet-Automation (Llama on Vultr Cloud)
 Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-agent collaboration.
 
+
+![Vultr Workflow](images/vultr_workflow.png)
+
 <details>
 
 #### How it works
@@ -138,7 +141,7 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 ---
 </details>
 
-![ryh2](https://github.com/user-attachments/assets/a96ce6a0-bc1b-4223-b5e9-60c96a0eada0)
+#![ryh2](https://github.com/user-attachments/assets/a96ce6a0-bc1b-4223-b5e9-60c96a0eada0)
 
 
 ## Support
