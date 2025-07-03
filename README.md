@@ -102,8 +102,8 @@ A personal-finance advisor that provides secure, privacy-preserving money manage
 
 #### Resources
 
-- **Demo video:** <https://drive.google.com/file/d/1carCDjr-sZbTs5OOmzwSPsLItCwbnW0Y/view?usp=sharing>  
-- **Source code:** <https://github.com/Coral-Protocol/Qualcomm-Agentic-Finance-Tracker-System-w-Llama-on-Qualcomm/tree/main>
+- **Demo video:** [Link](https://drive.google.com/file/d/1carCDjr-sZbTs5OOmzwSPsLItCwbnW0Y/view?usp=sharing)  
+- **Source code:** [Link](https://github.com/Coral-Protocol/Qualcomm-Agentic-Finance-Tracker-System-w-Llama-on-Qualcomm/tree/main)  
 
 ---
 </details>
