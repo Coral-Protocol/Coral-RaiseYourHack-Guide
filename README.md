@@ -115,16 +115,20 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 
 <details>
 
-#### Introduction
+#### How it works
 
-- The Vultr Track challenges you to deploy a web-based enterprise AI agent on Vultr’s cloud using Coral Protocol.  
-- Coral enables agents to communicate, share tasks, and coordinate via a structured messaging layer.  
-- This demo answers queries about any spreadsheet (e.g. the Titanic dataset at `https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv`).
+- This track shows demonstration of an agentic system to answer queries with respect to any spreadsheet. An Interface Agent coordinates user instructions.
+- The Interface Agent validates if either a spreadsheet is present in the folder path or uploaded in Drive/ GitHub in a public URL provided by the user and passes the instructions to the Pandas Agent.
+- The Pandas Agent processes the data and returns results as per the user requirement.
 
 #### Agents involved
 
 - [Coral Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent)  
 - [Coral Pandas Agent](https://github.com/Coral-Protocol/Coral-Pandas-Agent)
+
+#### API keys required
+
+- `API_KEY` ([Openai](https://platform.openai.com/api-keys)/[Groq](https://console.groq.com/keys))
 
 #### Resources
 
