@@ -45,6 +45,9 @@ It lets agents from any framework, language, or vendor work together in multi-ag
 
 ### Prosus: Agentic Voice Restaurant-Ordering Web App (Groq & LiveKit)
 This Restaurant Voice Agent system delivers an intelligent conversational experience for reservations, takeaway orders, and payments.
+
+<img width="3366" alt="ryh1" src="https://github.com/user-attachments/assets/f3081897-4cba-4ad9-91dc-24dcbbf49077" />
+
 <details>
 
 #### How it works
@@ -74,11 +77,13 @@ This Restaurant Voice Agent system delivers an intelligent conversational experi
 
 ---
 </details>
-<img width="3366" alt="ryh1" src="https://github.com/user-attachments/assets/f3081897-4cba-4ad9-91dc-24dcbbf49077" />
+
 
 
 ### Qualcomm: Agentic Finance-Tracker System w/ Llama on Qualcomm HW
 A personal-finance advisor that provides secure, privacy-preserving money management via natural-language interaction with a Coral Monzo Agent.
+
+![ryh3 4](https://github.com/user-attachments/assets/f552366b-9973-416c-93ed-4aadefd59b1a)
 
 <details>
 ![ryh3](https://github.com/user-attachments/assets/7be84481-3877-407f-ab8b-8e42ea3aa421)
@@ -107,8 +112,6 @@ A personal-finance advisor that provides secure, privacy-preserving money manage
 
 ---
 </details>
-
-![ryh3 4](https://github.com/user-attachments/assets/f552366b-9973-416c-93ed-4aadefd59b1a)
 
 ### Vultr: Enterprise Spreadsheet-Automation (Llama on Vultr Cloud)
 Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-agent collaboration.
@@ -140,8 +143,6 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 
 ---
 </details>
-
-#![ryh2](https://github.com/user-attachments/assets/a96ce6a0-bc1b-4223-b5e9-60c96a0eada0)
 
 
 ## Support
