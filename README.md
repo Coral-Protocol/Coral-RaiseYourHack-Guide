@@ -138,7 +138,7 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 
 #### Resources
 
-- **Demo video:** [Link](https://drive.google.com/file/d/1JlGDdraESduyIm44QvnJT2aiUzaRoi02/view?usp=sharing)  
+- **Demo video:** [Link](https://screen.studio/share/arwrINSZ)  
 - **Source code:** [Link](https://github.com/Coral-Protocol/Vultr-Enterprise-Spreadsheet-Automation/tree/main)  
 
 ---
