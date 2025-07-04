@@ -32,7 +32,9 @@ It lets agents from any framework, language, or vendor work together in multi-ag
 - [**Agent developers**](https://docs.coralprotocol.org/CoralDoc/CoreConcepts/Actors) earn incentives when their agents are used.  
 - [**Application developers**](https://docs.coralprotocol.org/CoralDoc/CoreConcepts/Actors) can mix and match agents from Coral’s growing [library](https://github.com/Coral-Protocol/awesome-composable-agents) to assemble advanced systems faster and without vendor lock-in.
 
-[**Dive deeper with our tutorial**](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+[**Dive deeper with our tutorial and checkout the example demo below**](https://github.com/Coral-Protocol/existing-agent-sessions-tutorial-private-temp)
+
+[![Example Demo](/images/coral-example-yt.png)](https://www.youtube.com/watch?v=tpHeSTSajCw)
 
 ---
 
