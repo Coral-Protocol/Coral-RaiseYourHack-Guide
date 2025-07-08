@@ -167,7 +167,7 @@ Build an next-generation AI-driven coder with BLACKBLOX.AI and Coral Protocol.
 
 #### API keys required
 
-- `API_KEY` (- [OpenAI API Key](https://platform.openai.com/api-keys)/[GitHub Personal Access Token](https://github.com/settings/tokens)/[BlackboxAI API Key](https://www.blackbox.ai/dashboard))
+- `API_KEY` (- [OpenAI API Key](https://platform.openai.com/api-keys) / [GitHub Personal Access Token](https://github.com/settings/tokens) / [BlackboxAI API Key](https://www.blackbox.ai/dashboard))
 
 #### Resources
 
