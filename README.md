@@ -145,6 +145,39 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 </details>
 
 
+### BlackBoxAI: Blackbox-AI-Coding-Agent-w-Coral
+Build an next-generation AI-driven coder with BLACKBLOX.AI and Coral Protocol.
+
+![BlackBoxAI Workflow](images/)
+
+<details>
+
+#### How it works
+
+- An Interface Agent to receive user's insturction and organize agents
+- An Repo Understanding agent to analyze a repo and retrieve related code
+- An Coralised BLACKBOX.AI agent to generate code
+
+#### Agents involved
+
+- [Coral Interface Agent](https://github.com/Coral-Protocol/Coral-Interface-Agent)  
+- [Repo Understanding Agent](https://github.com/Coral-Protocol/Coral-RepoUnderstanding-Agent)
+- [BLACKBOX.AI Agent](https://github.com/Coral-Protocol/Coral-BlackboxAI-Agent)
+
+
+#### API keys required
+
+- `API_KEY` (- [OpenAI API Key](https://platform.openai.com/api-keys)/[GitHub Personal Access Token](https://github.com/settings/tokens)/[BlackboxAI API Key](https://www.blackbox.ai/dashboard))
+
+#### Resources
+
+- **Demo video:** [Link](https://drive.google.com/file/d/1yE9p_h9-WMPu_lb21q-GR84gkiZbhqXu/view?usp=sharing)  
+- **Source code:** [Link](https://github.com/Coral-Protocol/Blackbox-AI-Coding-Agent-w-Coral)  
+
+---
+</details>
+
+
 ## Support
 
 Have questions? Join our Discord and post in **#dev-support**.  
