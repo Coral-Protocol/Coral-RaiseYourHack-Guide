@@ -148,7 +148,7 @@ Build an enterprise spreadsheet-automation app on Vultr using Coral and multi-ag
 ### BlackBoxAI: Blackbox-AI-Coding-Agent-w-Coral
 Build an next-generation AI-driven coder with BLACKBLOX.AI and Coral Protocol.
 
-![BlackBoxAI Workflow](images/)
+![BlackBoxAI Workflow](images/blackboxai_track.png)
 
 <details>
 
